@@ -25,7 +25,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/docs',
-        publicPath: '/',
+        publicPath: '/react-search/',
         filename: 'bundle.js'
     },
     plugins: [
