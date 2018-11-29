@@ -3,16 +3,26 @@ import '../styles/components/SearchBar.styl'
 
 class SearchBar extends React.Component {
 
-    onInputChange(event) {
-        console.log(event.target.value)
+    constructor(props) {
+        super(props);
+        this.state = { value: "" };
+    }
+
+    onFormSubmit(event) {
+        event.preventDefault();
+        console.log(this.state.value);
     }
 
     render() {
         return (
             <div className="SearchBar">
-                <form className="SearchBar-form">
-                    <input className="SearchBar-input" type="text" onChange={this.onInputChange}>
-                    </input>
+                <form className="SearchBar-form" onSubmit={e => this.onFormSubmit(e)}>
+                    <input
+                        className="SearchBar-input"
+                        type="text"
+                        value={ this.state.value }
+                        onChange={ e => this.setState({ value: e.target.value }) }
+                    ></input>
                     <svg className="SearchBar-icon">
                         <use href="#icon-search"></use>
                     </svg>
