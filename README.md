@@ -6,6 +6,10 @@ React Project Setup (stylus, Babel). Note that all dependencies that you include
 ```
 npm install
 ```
+With yarn:
+```
+yarn install
+```
 
 # Development
 With npm:
