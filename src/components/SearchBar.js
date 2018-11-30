@@ -1,4 +1,5 @@
 import React from 'react'
+import { TweenMax, Power2 } from "gsap/all";
 import '../styles/components/SearchBar.styl'
 
 class SearchBar extends React.Component {
@@ -11,6 +12,11 @@ class SearchBar extends React.Component {
     onFormSubmit(event) {
         event.preventDefault();
         console.log(this.state.value);
+    }
+
+    componentDidMount(){
+        const bar = document.querySelector('.SearchBar');
+        TweenMax.fromTo(bar, 0.5, {opacity: 0, y: -40}, {opacity: 1, y: 0, ease: Power2.easeIn})
     }
 
     render() {
