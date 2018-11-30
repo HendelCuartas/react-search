@@ -8,7 +8,6 @@ class App extends React.Component {
     constructor(props){
         super(props);
         // logo container
-        this.title = null;
     }
 
     componentDidMount(){
