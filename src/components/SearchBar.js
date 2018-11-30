@@ -11,7 +11,20 @@ class SearchBar extends React.Component {
 
     onFormSubmit(event) {
         event.preventDefault();
-        console.log(this.state.value);
+    }
+
+    inputOnFocus(e) {
+        const searchBar = document.querySelector('.SearchBar')
+        searchBar.classList.add('SearchBar-focused')
+    }
+
+    inputOnBlur(e) {
+        const searchBar = document.querySelector('.SearchBar')
+        searchBar.classList.remove('SearchBar-focused')
+    }
+
+    onInputChange(e) {
+        this.setState({ value: e.target.value })
     }
 
     componentDidMount(){
@@ -21,13 +34,15 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className="SearchBar">
+            <div className="SearchBar" ref="SearchBar">
                 <form className="SearchBar-form" onSubmit={e => this.onFormSubmit(e)}>
                     <input
                         className="SearchBar-input"
                         type="text"
                         value={ this.state.value }
-                        onChange={ e => this.setState({ value: e.target.value }) }
+                        onChange={ e => { this.onInputChange(e) } }
+                        onFocus={e => { this.inputOnFocus(e) }}
+                        onBlur={e => { this.inputOnBlur(e) }}
                     ></input>
                     <svg className="SearchBar-icon">
                         <use href="#icon-search"></use>
