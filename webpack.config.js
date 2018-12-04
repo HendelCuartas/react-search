@@ -31,24 +31,24 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new stylusLoader.OptionsPlugin({
-          default: {
-              use: [
-                  require("nib")(),
-                  require("rupture")(),
-                  require("poststylus")([
-                      require("rucksack-css")({
-                          autoprefixer: false,
-                          fallbacks: false
-                      }),
-                      require("lost")()
-                  ])
-              ],
-              import: [
-                  "~nib/lib/nib/index.styl",
-                  "~rupture/rupture/index.styl"
-              ]
-          }
-      })
+            default: {
+                use: [
+                    require("nib")(),
+                    require("rupture")(),
+                    require("poststylus")([
+                        require("rucksack-css")({
+                            autoprefixer: false,
+                            fallbacks: false
+                        }),
+                        require("lost")()
+                    ])
+                ],
+                import: [
+                    "~nib/lib/nib/index.styl",
+                    "~rupture/rupture/index.styl"
+                ]
+            }
+        })
     ],
     devServer: {
         contentBase: './docs',
