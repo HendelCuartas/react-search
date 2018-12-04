@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import LayoutHeader from '../components/LayoutHeader'
 import Background from '../components/Background'
+import ImageList from '../components/ImageList'
 import '../styles/components/App.styl'
 
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
             <div className="App">
                 <Background></Background>
                 <div className="App-container">
+                    <ImageList images={this.state.result}></ImageList>
                 </div>
                 <LayoutHeader onSubmitLayout={e => this.onSearchSubmit(e)}></LayoutHeader>
             </div>
