@@ -1,0 +1,42 @@
+.ImageModal
+    fixed top 5% left 0
+    size 90%
+    box-shadow 0 0 1em aliceblue
+
+.ImageModal-btn
+    position relative
+    margin-left 50%
+    margin-top -25px
+    size 50px
+    box-shadow 0 0 1em aliceblue
+    transform translateX(-50%)
+    transition 0.5s
+    cursor pointer
+    &:hover
+        background #FFF
+        &::before
+            background #000
+        &::after
+            background #000
+    &::before
+        absolute top 50% left 50%
+        transform translate(-50%, -50%) rotate(-45deg)
+        content ''
+        size 2px 40%
+        background #FFF
+        transition 0.5s
+    &::after
+        absolute top 50% left 50%
+        transform translate(-50%, -50%) rotate(45deg)
+        content ''
+        size 2px 40%
+        background #FFF
+        transition 0.5s
+
+.ImageModal-img
+    size 100%
+    background-size contain
+    background-repeat no-repeat
+    background-position left center
+    +above(rupture.scale[3])
+        background-size cover
