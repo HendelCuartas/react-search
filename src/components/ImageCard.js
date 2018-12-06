@@ -21,7 +21,11 @@ class ImageCard extends React.Component {
 
     render() {
         return (
-            <div className="ImageCard" style={{ gridRowEnd: `span ${this.state.spans}` }}>
+            <div
+                className="ImageCard"
+                style={{ gridRowEnd: `span ${this.state.spans}` }}
+                onClick={e => this.props.onClickImage(e)}
+            >
                 <img
                     src={this.props.image.urls.regular}
                     alt={this.props.image.description}

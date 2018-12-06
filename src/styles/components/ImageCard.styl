@@ -1,2 +1,9 @@
 .ImageCard-image
     max-width 340px
+    -webkit-filter grayscale(100%)
+    filter grayscale(100%)
+    transition 0.5s
+    &:hover
+        -webkit-filter grayscale(0%)
+        filter grayscale(0%)
+        cursor pointer
